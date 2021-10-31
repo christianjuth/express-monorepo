@@ -1,0 +1,29 @@
+{
+  "name": "express-monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:christianjuth/express-monorepo.git",
+  "author": "Christian Juth <cjuth2@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./main.js",
+    "dev": "nodemon ./main.js",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-fingerprint": "^1.2.2",
+    "nodemon": "^2.0.14",
+    "tictactoe-complex-ai": "^1.0.1"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
+    "prettier": "2.4.1"
+  },
+  "lint-staged": {
+    "**/*.(ts|tsx|js|jsx|html|css)": [
+      "prettier --write"
+    ]
+  }
+}
