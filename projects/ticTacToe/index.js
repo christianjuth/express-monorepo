@@ -5,6 +5,8 @@ const path = require("path");
 const stream = require("stream");
 const ai = require("tictactoe-complex-ai");
 
+const RESET_GAME_AFTER_MS = 1000 * 60 * 3; // 3 minutes
+
 const aiInstance = ai.createAI({
   level: "expert",
   minResponseTime: 500,
@@ -16,8 +18,6 @@ const app = express();
 const games = {};
 
 class TicTacToe {
-  winner;
-
   constructor() {
     this.reset();
   }
@@ -30,11 +30,24 @@ class TicTacToe {
     this.data[y * 3 + x] = data;
   }
 
+  resetIfExpired() {
+    if (Date.now() > this.expires) {
+      this.reset();
+    }
+  }
+
+  resetExpirationTime() {
+    this.expires = Date.now() + RESET_GAME_AFTER_MS;
+  }
+
   getTile(x, y) {
+    this.resetIfExpired();
     return this.getCell(x, y) || "empty";
   }
 
   async move(x, y, player = this.player) {
+    this.resetExpirationTime();
+
     if (this.winner) {
       throw new Error("game over");
     }
@@ -95,6 +108,9 @@ class TicTacToe {
   }
 
   reset() {
+    // No need to start the expiration
+    // clock until a move has been made
+    this.expires = Number.MAX_SAFE_INTEGER;
     this.winner = "";
     this.data = Array(9).fill("");
     this.player = "X";
