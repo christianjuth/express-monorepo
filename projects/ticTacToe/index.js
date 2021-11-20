@@ -214,4 +214,21 @@ app.get("/restart", noCache, (req, res) => {
   }
 });
 
+app.get("/play-as", async (req, res) => {
+  const { game } = req;
+  const { redirect, player } = req.query;
+
+  game.reset();
+  if (player === "O") {
+    game.player = player;
+    await game.aiMove();
+  }
+
+  if (redirect) {
+    res.redirect(redirect);
+  } else {
+    res.send("missing redirect url");
+  }
+});
+
 module.exports = app;
