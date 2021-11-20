@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@assemblyscript/loader@^0.19.20":
+  version "0.19.20"
+  resolved "https://registry.yarnpkg.com/@assemblyscript/loader/-/loader-0.19.20.tgz#73c923a726c9b15cbdf83d39310566fb55ce5b6d"
+  integrity sha512-BKKWNGwp0xyELmk214RnwB4fxZeNokBkkvpCzpBbkD1FnDuNO7Dv96WECOPeiFySPl78FKAihlasU8MJ1Vldnw==
+
 "@babel/code-frame@^7.0.0":
   version "7.16.0"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.16.0.tgz#0dfc80309beec8411e65e706461c408b0bb9b431"
@@ -22,6 +27,23 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     chalk "^2.0.0"
     js-tokens "^4.0.0"
+
+"@christianjuth/tictactoe-engine@0.0.2-alpha3":
+  version "0.0.2-alpha3"
+  resolved "https://registry.yarnpkg.com/@christianjuth/tictactoe-engine/-/tictactoe-engine-0.0.2-alpha3.tgz#ada967e8f660ee6c6b9f4c9f182a183ae4053dc8"
+  integrity sha512-EPLG2wRJYVYlUvu9zaDkmQXdC3fvMJZJtFlkTsspX7i4Hoxy00Euasb/2Geeyz/OLWm23ZFUJ4Isc1/pYB7GvA==
+  dependencies:
+    "@assemblyscript/loader" "^0.19.20"
+    typescript "^4.5.2"
+
+"@christianjuth/tictactoe-engine@^0.0.2-alpha4":
+  version "0.0.2-alpha4"
+  resolved "https://registry.yarnpkg.com/@christianjuth/tictactoe-engine/-/tictactoe-engine-0.0.2-alpha4.tgz#fa66d67fcddc1c74399ca8ca96e4738ec71b2bee"
+  integrity sha512-GhvgGqPJ3Av7ZN4tlzv2nNk39SodykQQMcNt7Qb8cxfW85JA+6pcvOdjZGSECPQfczK30weTqQR5dBJGcYZvhg==
+  dependencies:
+    "@assemblyscript/loader" "^0.19.20"
+    "@christianjuth/tictactoe-engine" "0.0.2-alpha3"
+    typescript "^4.5.2"
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
@@ -1677,6 +1699,11 @@ typedarray-to-buffer@^3.1.5:
   integrity sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==
   dependencies:
     is-typedarray "^1.0.0"
+
+typescript@^4.5.2:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.2.tgz#8ac1fba9f52256fdb06fb89e4122fa6a346c2998"
+  integrity sha512-5BlMof9H1yGt0P8/WF+wPNw6GfctgGjXp5hkblpyT+8rkASSmkUKMXrxR0Xg8ThVCi/JnHQiKXeBaEwCeQwMFw==
 
 undefsafe@^2.0.3:
   version "2.0.5"

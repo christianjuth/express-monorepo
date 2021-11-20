@@ -3,15 +3,12 @@ const Fingerprint = require("express-fingerprint");
 const fs = require("fs");
 const path = require("path");
 const stream = require("stream");
-const ai = require("tictactoe-complex-ai");
+const {
+  getBestMove,
+  predictWinner,
+} = require("@christianjuth/tictactoe-engine");
 
 const RESET_GAME_AFTER_MS = 1000 * 60 * 3; // 3 minutes
-
-const aiInstance = ai.createAI({
-  level: "expert",
-  minResponseTime: 500,
-  maxResponseTime: 500,
-});
 
 const app = express();
 
@@ -66,8 +63,10 @@ class TicTacToe {
 
   async aiMove() {
     try {
-      const pos = await aiInstance.play(this.data);
-      this.data[pos] = this.computer;
+      const bestMove = getBestMove(this.data);
+      if (bestMove) {
+        this.data = bestMove;
+      }
     } catch (e) {
       console.log("err", e);
     }
@@ -194,6 +193,13 @@ app.get("/move", async (req, res) => {
 app.get("/winner", noCache, (req, res) => {
   const { game } = req;
   const winner = game.getWinner();
+  sendAsset(res, winner);
+});
+
+app.get("/predicted-winner", noCache, (req, res) => {
+  const { game } = req;
+  const winner = predictWinner(game.data) || "empty";
+  console.log(winner);
   sendAsset(res, winner);
 });
 
