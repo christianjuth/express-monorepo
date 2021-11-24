@@ -28,22 +28,18 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@christianjuth/tictactoe-engine@0.0.2-alpha3":
-  version "0.0.2-alpha3"
-  resolved "https://registry.yarnpkg.com/@christianjuth/tictactoe-engine/-/tictactoe-engine-0.0.2-alpha3.tgz#ada967e8f660ee6c6b9f4c9f182a183ae4053dc8"
-  integrity sha512-EPLG2wRJYVYlUvu9zaDkmQXdC3fvMJZJtFlkTsspX7i4Hoxy00Euasb/2Geeyz/OLWm23ZFUJ4Isc1/pYB7GvA==
-  dependencies:
-    "@assemblyscript/loader" "^0.19.20"
-    typescript "^4.5.2"
+"@christianjuth/minimax@^0.0.1-alpha.13":
+  version "0.0.1-alpha.13"
+  resolved "https://registry.yarnpkg.com/@christianjuth/minimax/-/minimax-0.0.1-alpha.13.tgz#76502b4e48d885052603830d93ef4e25e62703cc"
+  integrity sha512-JmWpd7g711VBpP1jXlCwmRVmsvLRn3EPgZozZMgI9cLr7o6sUrHYAQGnLRzURGLsA9rVgYykAn6ifcK/AG/rqg==
 
-"@christianjuth/tictactoe-engine@^0.0.2-alpha4":
-  version "0.0.2-alpha4"
-  resolved "https://registry.yarnpkg.com/@christianjuth/tictactoe-engine/-/tictactoe-engine-0.0.2-alpha4.tgz#fa66d67fcddc1c74399ca8ca96e4738ec71b2bee"
-  integrity sha512-GhvgGqPJ3Av7ZN4tlzv2nNk39SodykQQMcNt7Qb8cxfW85JA+6pcvOdjZGSECPQfczK30weTqQR5dBJGcYZvhg==
+"@christianjuth/tictactoe-engine@0.0.3-alpha.9":
+  version "0.0.3-alpha.9"
+  resolved "https://registry.yarnpkg.com/@christianjuth/tictactoe-engine/-/tictactoe-engine-0.0.3-alpha.9.tgz#0168d9c54d213878a3ac3077d196dcf17abca983"
+  integrity sha512-1HVxQUcndOCSDYojQQLRXBUXlgerUByK1y8lt47mBjR7st+CRjNjdmrS2rl79KPcRYs8ARHoHpvUo6RafxsmDQ==
   dependencies:
     "@assemblyscript/loader" "^0.19.20"
-    "@christianjuth/tictactoe-engine" "0.0.2-alpha3"
-    typescript "^4.5.2"
+    "@christianjuth/minimax" "^0.0.1-alpha.13"
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
@@ -1699,11 +1695,6 @@ typedarray-to-buffer@^3.1.5:
   integrity sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==
   dependencies:
     is-typedarray "^1.0.0"
-
-typescript@^4.5.2:
-  version "4.5.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.2.tgz#8ac1fba9f52256fdb06fb89e4122fa6a346c2998"
-  integrity sha512-5BlMof9H1yGt0P8/WF+wPNw6GfctgGjXp5hkblpyT+8rkASSmkUKMXrxR0Xg8ThVCi/JnHQiKXeBaEwCeQwMFw==
 
 undefsafe@^2.0.3:
   version "2.0.5"

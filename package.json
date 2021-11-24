@@ -11,7 +11,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@christianjuth/tictactoe-engine": "^0.0.2-alpha4",
+    "@christianjuth/tictactoe-engine": "0.0.3-alpha.9",
     "express": "^4.17.1",
     "express-fingerprint": "^1.2.2",
     "nodemon": "^2.0.14",

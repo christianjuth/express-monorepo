@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const stream = require("stream");
 const {
-  getBestMove,
+  getBestMoveWasmNuralNetwork,
   predictWinner,
 } = require("@christianjuth/tictactoe-engine");
 
@@ -63,7 +63,7 @@ class TicTacToe {
 
   async aiMove() {
     try {
-      const bestMove = getBestMove(this.data);
+      const bestMove = await getBestMoveWasmNuralNetwork(this.data);
       if (bestMove) {
         this.data = bestMove;
       }
